@@ -1,9 +1,13 @@
-root@socfpga:~/pipe# ./pipecnn
+root@socfpga:~/pipecnn_2_0_opencl_17# ./run.exe.arm conv.aocx
 ***************************************************
 PipeCNN: An OpenCL-Based FPGA Accelerator for CNNs
 ***************************************************
-find platform
-device reset
+
+61063552 total weights read
+154587 bytes image read
+1024 total output reference read
+
+
 Platform: Intel(R) FPGA SDK for OpenCL(TM)
 Using 1 device(s)
   Device 0: de10_nano_sharedonly : Cyclone V SoC Development Kit
@@ -14,22 +18,156 @@ Device Max WorkItem Size: 2147483647
 Device Global Memory Size: 512 MBytes
 Device Local Memory Size: 16 KBytes
 Device Max Clock Freq: 1000 Mhz
-create context
-create program from file
 
-Loading kernel/binary from file conv_pipe.aocx
+Loading kernel/binary from file conv.aocx
 Reprogramming device [0] with handle 1
-create queues num_devices=1
-create queues clCreateBuffer LAYER_NUM=8
-create buffer layer_config j=0, weight_w=4, weight_h=5 size=46464 tBuffReq=46464
-create buffer layer_config j=1, weight_w=4, weight_h=5 size=614400 tBuffReq=660864
-create buffer layer_config j=2, weight_w=4, weight_h=5 size=1769472 tBuffReq=2430336
-create buffer layer_config j=3, weight_w=4, weight_h=5 size=1327104 tBuffReq=3757440
-create buffer layer_config j=4, weight_w=4, weight_h=5 size=884736 tBuffReq=4642176
-create buffer layer_config j=5, weight_w=4, weight_h=5 size=75497472 tBuffReq=80139648
-create buffer layer_config j=6, weight_w=4, weight_h=5 size=33554432 tBuffReq=113694080
-create buffer layer_config j=7, weight_w=4, weight_h=5 size=8388608 tBuffReq=122082688
-create buffer read j=0, size=16777216 tBuffReq=138859904
-create buffer read j=0, size=16777216 tBuffReq=155637120
-Segmentation fault
-root@socfpga:~/pipe#
+
+Executing Layer 1:
+
+Launching kernel MemRd with local size: 1, 1, 46  (global size: 55, 55, 552)
+
+Launching single work-item kernel Conv
+
+Launching single work-item kernel Pooling
+Launching for 96 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 27, 27, 96)
+
+Launching kernel lrn with local size: 1, 1, 12  (global size: 27, 27, 12)
+
+Executing Layer 2:
+
+Launching kernel MemRd with local size: 5, 5, 6  (global size: 135, 135, 192)
+
+Launching single work-item kernel Conv
+
+Launching single work-item kernel Pooling
+Launching for 256 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 13, 13, 256)
+
+Launching kernel lrn with local size: 1, 1, 32  (global size: 13, 13, 32)
+
+Executing Layer 3:
+
+Launching kernel MemRd with local size: 3, 3, 32  (global size: 39, 39, 1536)
+
+Launching single work-item kernel Conv
+Launching for 384 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 13, 13, 384)
+
+Executing Layer 4:
+
+Launching kernel MemRd with local size: 3, 3, 24  (global size: 39, 39, 1152)
+
+Launching single work-item kernel Conv
+Launching for 384 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 13, 13, 384)
+
+Executing Layer 5:
+
+Launching kernel MemRd with local size: 3, 3, 24  (global size: 39, 39, 768)
+
+Launching single work-item kernel Conv
+
+Launching single work-item kernel Pooling
+Launching for 256 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 6, 6, 256)
+
+Executing Layer 6:
+
+Launching kernel MemRd with local size: 6, 6, 32  (global size: 6, 6, 16384)
+
+Launching single work-item kernel Conv
+Launching for 4096 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 1, 1, 4096)
+
+Executing Layer 7:
+
+Launching kernel MemRd with local size: 1, 1, 512  (global size: 1, 1, 262144)
+
+Launching single work-item kernel Conv
+Launching for 4096 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 1, 1, 4096)
+
+Executing Layer 8:
+
+Launching kernel MemRd with local size: 1, 1, 512  (global size: 1, 1, 65536)
+
+Launching single work-item kernel Conv
+Launching for 1024 elements
+
+Launching kernel MemWr with local size: 1, 1, 8  (global size: 1, 1, 1024)
+
+Copyed all batched results from fc_2 buffers.
+
+Done !!!
+
+
+-------------------
+
+Performance Summary
+
+Total runtime: 0.818918s
+
+Kernel runtime summary:
+  Layer-1:
+    MemRd: 69.773 ms
+    Conv : 69.605 ms
+    Pool : 69.517 ms
+    MemWr: 69.429 ms
+    Lrn  : 1.498 ms
+  Layer-2:
+    MemRd: 96.741 ms
+    Conv : 96.583 ms
+    Pool : 96.485 ms
+    MemWr: 96.382 ms
+    Lrn  : 0.485 ms
+  Layer-3:
+    MemRd: 66.969 ms
+    Conv : 66.833 ms
+    Pool : 0.000 ms
+    MemWr: 66.733 ms
+    Lrn  : 0.000 ms
+  Layer-4:
+    MemRd: 50.251 ms
+    Conv : 50.107 ms
+    Pool : 0.000 ms
+    MemWr: 50.008 ms
+    Lrn  : 0.000 ms
+  Layer-5:
+    MemRd: 33.353 ms
+    Conv : 33.185 ms
+    Pool : 33.076 ms
+    MemWr: 32.941 ms
+    Lrn  : 0.000 ms
+  Layer-6:
+    MemRd: 14.441 ms
+    Conv : 14.290 ms
+    Pool : 0.000 ms
+    MemWr: 14.186 ms
+    Lrn  : 0.000 ms
+  Layer-7:
+    MemRd: 6.523 ms
+    Conv : 6.372 ms
+    Pool : 0.000 ms
+    MemWr: 6.263 ms
+    Lrn  : 0.000 ms
+  Layer-8:
+    MemRd: 1.792 ms
+    Conv : 1.638 ms
+    Pool : 0.000 ms
+    MemWr: 1.527 ms
+    Lrn  : 0.000 ms
+
+Total kernel runtime 338.612 ms
+Batch size = 1, average process time per batch: 338.612 ms
+
+Start verifying results ...
+Selected item = 0 from the combined batch results in fc buffers
+Check Pass

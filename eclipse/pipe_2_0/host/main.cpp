@@ -727,7 +727,7 @@ int main(int argc, char** argv)
 			knl_memWr_local_size[0] = 1;
 			knl_memWr_local_size[1] = 1;
 			knl_memWr_local_size[2] = LANE_NUM;
-
+		    printf("Launching for %d elements\n", knl_memWr_global_size[2]);
 			status = clEnqueueNDRangeKernel(que_memWr[i], knl_memWr[i], 3, NULL, 
 									knl_memWr_global_size, knl_memWr_local_size, 0, NULL, &memWr_event[i]);
 			checkError(status, "Failed to launch kernel memWr");

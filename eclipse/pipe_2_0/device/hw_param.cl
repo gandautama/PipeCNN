@@ -37,7 +37,7 @@
 
 // Macro architecture parameters
 // General
-#define VEC_SIZE            5
+#define VEC_SIZE            8
 #define LANE_NUM            8
 #define CHN_DEPTH           0
 // Conv Kernel
