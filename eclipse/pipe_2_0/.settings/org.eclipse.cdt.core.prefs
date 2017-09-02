@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/ALTERAOCLSDKROOT/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/ALTERAOCLSDKROOT/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/ALTERAOCLSDKROOT/value=/cygdrive/c/intelFPGA/17.0/hld/
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/PATH/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/PATH/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/PATH/value=C\:/Program Files/Java/jre1.8.0_102/bin/server;C\:/Program Files/Java/jre1.8.0_102/bin;C\:/Program Files/Java/jre1.8.0_102/lib/amd64;C\:\\Program Files\\Broadcom\\Broadcom 802.11;C\:\\ProgramData\\Oracle\\Java\\javapath;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files\\Hewlett-Packard\\SimplePass\\;C\:\\Program Files (x86)\\Git\\cmd;C\:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C\:\\Program Files (x86)\\Brackets\\command;C\:\\Program Files\\Java\\jdk1.8.0_31\\bin;C\:\\WINDOWS\\system32;C\:\\WINDOWS;C\:\\WINDOWS\\System32\\Wbem;C\:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\bin;C\:\\intelFPGA\\17.0\\hld\\bin;C\:\\intelFPGA\\17.0\\hld\\host\\windows64\\bin;C\:\\Users\\Ganda\\eclipse\\cpp-neon3\\eclipse;C\:\\intelFPGA\\17.0\\embedded\\ds-5\\sw\\gcc\\bin;C\:\\intelFPGA\\17.0\\embedded\\host_tools\\cygwin\\bin;C\:\\intelFPGA_pro\\17.0\\embedded\\ds-5\\sw\\gcc\\bin
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/VERBOSE/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/VERBOSE/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/VERBOSE/value=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.228534018/appendContributed=true

@@ -1,0 +1,35 @@
+root@socfpga:~/pipe# ./pipecnn
+***************************************************
+PipeCNN: An OpenCL-Based FPGA Accelerator for CNNs
+***************************************************
+find platform
+device reset
+Platform: Intel(R) FPGA SDK for OpenCL(TM)
+Using 1 device(s)
+  Device 0: de10_nano_sharedonly : Cyclone V SoC Development Kit
+Device OpenCL Version: OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 16.1
+Device Max Compute Units: 1
+Device Max WorkGroup Size: 2147483647
+Device Max WorkItem Size: 2147483647
+Device Global Memory Size: 512 MBytes
+Device Local Memory Size: 16 KBytes
+Device Max Clock Freq: 1000 Mhz
+create context
+create program from file
+
+Loading kernel/binary from file conv_pipe.aocx
+Reprogramming device [0] with handle 1
+create queues num_devices=1
+create queues clCreateBuffer LAYER_NUM=8
+create buffer layer_config j=0, weight_w=4, weight_h=5 size=46464 tBuffReq=46464
+create buffer layer_config j=1, weight_w=4, weight_h=5 size=614400 tBuffReq=660864
+create buffer layer_config j=2, weight_w=4, weight_h=5 size=1769472 tBuffReq=2430336
+create buffer layer_config j=3, weight_w=4, weight_h=5 size=1327104 tBuffReq=3757440
+create buffer layer_config j=4, weight_w=4, weight_h=5 size=884736 tBuffReq=4642176
+create buffer layer_config j=5, weight_w=4, weight_h=5 size=75497472 tBuffReq=80139648
+create buffer layer_config j=6, weight_w=4, weight_h=5 size=33554432 tBuffReq=113694080
+create buffer layer_config j=7, weight_w=4, weight_h=5 size=8388608 tBuffReq=122082688
+create buffer read j=0, size=16777216 tBuffReq=138859904
+create buffer read j=0, size=16777216 tBuffReq=155637120
+Segmentation fault
+root@socfpga:~/pipe#
