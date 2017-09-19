@@ -45,6 +45,16 @@
 
 #pragma OPENCL_EXTENSION cl_altera_channels : enable
 
+//backward compability prior to Intel SDK for opencl
+#ifndef read_channel_intel
+#define read_channel_intel read_channel_altera
+#endif
+
+#ifndef write_channel_intel
+#define write_channel_intel write_channel_altera
+#endif
+
+
 // Define the precision of the data-path
 typedef char DPTYPE;
 typedef int  MACTYPE;
