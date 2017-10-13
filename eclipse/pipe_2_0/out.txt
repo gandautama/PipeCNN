@@ -4,8 +4,13 @@ PipeCNN: An OpenCL-Based FPGA Accelerator for CNNs
 
 61063552 total weights read 
 154587 bytes image read 
+01 !!!
+02 !!!
+03 !!!
 1024 total output reference read 
 
+04 !!!
+05 !!!
 
 Platform: Intel(R) FPGA SDK for OpenCL(TM)
 Using 1 device(s)
@@ -22,12 +27,11 @@ Loading kernel/binary from file conv.aocx
 
 Executing Layer 1:
 
-Launching kernel MemRd with local size: 1, 1, 46  (global size: 55, 55, 552)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
 
 Launching single work-item kernel Pooling
-Launching for 96 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 27, 27, 96)
 
@@ -35,12 +39,11 @@ Launching kernel lrn with local size: 1, 1, 12  (global size: 27, 27, 12)
 
 Executing Layer 2:
 
-Launching kernel MemRd with local size: 5, 5, 6  (global size: 135, 135, 192)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
 
 Launching single work-item kernel Pooling
-Launching for 256 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 13, 13, 256)
 
@@ -48,57 +51,51 @@ Launching kernel lrn with local size: 1, 1, 32  (global size: 13, 13, 32)
 
 Executing Layer 3:
 
-Launching kernel MemRd with local size: 3, 3, 32  (global size: 39, 39, 1536)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
-Launching for 384 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 13, 13, 384)
 
 Executing Layer 4:
 
-Launching kernel MemRd with local size: 3, 3, 24  (global size: 39, 39, 1152)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
-Launching for 384 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 13, 13, 384)
 
 Executing Layer 5:
 
-Launching kernel MemRd with local size: 3, 3, 24  (global size: 39, 39, 768)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
 
 Launching single work-item kernel Pooling
-Launching for 256 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 6, 6, 256)
 
 Executing Layer 6:
 
-Launching kernel MemRd with local size: 6, 6, 32  (global size: 6, 6, 16384)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
-Launching for 4096 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 1, 1, 4096)
 
 Executing Layer 7:
 
-Launching kernel MemRd with local size: 1, 1, 512  (global size: 1, 1, 262144)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
-Launching for 4096 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 1, 1, 4096)
 
 Executing Layer 8:
 
-Launching kernel MemRd with local size: 1, 1, 512  (global size: 1, 1, 65536)
+Launching single work-item kernel winbuffer
 
 Launching single work-item kernel Conv
-Launching for 1024 elements
 
 Launching kernel MemWr with local size: 1, 1, 8  (global size: 1, 1, 1024)
 
@@ -111,61 +108,65 @@ Done !!!
 
 Performance Summary
 
-Total runtime: 0.367382s 
+Total runtime: 0.365925s 
 
 Kernel runtime summary:
   Layer-1:
-    MemRd: 68.445 ms
-    Conv : 68.295 ms
-    Pool : 68.229 ms
-    MemWr: 68.160 ms
-    Lrn  : 1.709 ms
+    MemRd: 79.636 ms
+    Conv : 79.503 ms
+    Pool : 79.436 ms
+    MemWr: 79.354 ms
+    Lrn  : 1.559 ms
   Layer-2:
-    MemRd: 95.949 ms
-    Conv : 95.812 ms
-    Pool : 95.734 ms
-    MemWr: 95.658 ms
-    Lrn  : 0.554 ms
+    MemRd: 63.422 ms
+    Conv : 63.298 ms
+    Pool : 63.224 ms
+    MemWr: 63.146 ms
+    Lrn  : 0.512 ms
   Layer-3:
-    MemRd: 66.265 ms
-    Conv : 66.142 ms
+    MemRd: 42.768 ms
+    Conv : 42.654 ms
     Pool : 0.000 ms
-    MemWr: 66.069 ms
+    MemWr: 42.580 ms
     Lrn  : 0.000 ms
   Layer-4:
-    MemRd: 49.835 ms
-    Conv : 49.712 ms
+    MemRd: 31.872 ms
+    Conv : 31.753 ms
     Pool : 0.000 ms
-    MemWr: 49.637 ms
+    MemWr: 31.675 ms
     Lrn  : 0.000 ms
   Layer-5:
-    MemRd: 33.059 ms
-    Conv : 32.910 ms
-    Pool : 32.819 ms
-    MemWr: 32.711 ms
+    MemRd: 21.356 ms
+    Conv : 21.222 ms
+    Pool : 21.133 ms
+    MemWr: 21.042 ms
     Lrn  : 0.000 ms
   Layer-6:
-    MemRd: 14.359 ms
-    Conv : 14.237 ms
+    MemRd: 14.408 ms
+    Conv : 14.281 ms
     Pool : 0.000 ms
-    MemWr: 14.155 ms
+    MemWr: 14.197 ms
     Lrn  : 0.000 ms
   Layer-7:
-    MemRd: 6.494 ms
-    Conv : 6.364 ms
+    MemRd: 6.515 ms
+    Conv : 6.388 ms
     Pool : 0.000 ms
-    MemWr: 6.275 ms
+    MemWr: 6.308 ms
     Lrn  : 0.000 ms
   Layer-8:
     MemRd: 1.775 ms
-    Conv : 1.639 ms
+    Conv : 1.647 ms
     Pool : 0.000 ms
-    MemWr: 1.551 ms
+    MemWr: 1.557 ms
     Lrn  : 0.000 ms
 
-Total kernel runtime 335.111 ms 
-Batch size = 1, average process time per batch: 335.111 ms 
+Total kernel runtime 260.745 ms 
+Batch size = 1, average process time per batch: 260.745 ms 
 
 Start verifying results ...
 Selected item = 0 from the combined batch results in fc buffers
-Check Pass
+
+Check Pass !!!
+
+The inference result is n02123045 tabby, tabby ca   (the prob is 56.00) 
+
