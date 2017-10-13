@@ -4,13 +4,8 @@ PipeCNN: An OpenCL-Based FPGA Accelerator for CNNs
 
 61063552 total weights read 
 154587 bytes image read 
-01 !!!
-02 !!!
-03 !!!
 1024 total output reference read 
 
-04 !!!
-05 !!!
 
 Platform: Intel(R) FPGA SDK for OpenCL(TM)
 Using 1 device(s)
@@ -108,60 +103,60 @@ Done !!!
 
 Performance Summary
 
-Total runtime: 0.365925s 
+Total runtime: 0.291518s 
 
 Kernel runtime summary:
   Layer-1:
-    MemRd: 79.636 ms
-    Conv : 79.503 ms
-    Pool : 79.436 ms
-    MemWr: 79.354 ms
+    MemRd: 79.615 ms
+    Conv : 79.481 ms
+    Pool : 79.412 ms
+    MemWr: 79.331 ms
     Lrn  : 1.559 ms
   Layer-2:
-    MemRd: 63.422 ms
-    Conv : 63.298 ms
+    MemRd: 63.425 ms
+    Conv : 63.299 ms
     Pool : 63.224 ms
-    MemWr: 63.146 ms
-    Lrn  : 0.512 ms
+    MemWr: 63.143 ms
+    Lrn  : 0.507 ms
   Layer-3:
-    MemRd: 42.768 ms
-    Conv : 42.654 ms
+    MemRd: 42.767 ms
+    Conv : 42.651 ms
     Pool : 0.000 ms
-    MemWr: 42.580 ms
+    MemWr: 42.576 ms
     Lrn  : 0.000 ms
   Layer-4:
-    MemRd: 31.872 ms
-    Conv : 31.753 ms
+    MemRd: 31.877 ms
+    Conv : 31.759 ms
     Pool : 0.000 ms
-    MemWr: 31.675 ms
+    MemWr: 31.682 ms
     Lrn  : 0.000 ms
   Layer-5:
-    MemRd: 21.356 ms
-    Conv : 21.222 ms
-    Pool : 21.133 ms
-    MemWr: 21.042 ms
+    MemRd: 21.367 ms
+    Conv : 21.234 ms
+    Pool : 21.144 ms
+    MemWr: 21.052 ms
     Lrn  : 0.000 ms
   Layer-6:
-    MemRd: 14.408 ms
-    Conv : 14.281 ms
+    MemRd: 14.405 ms
+    Conv : 14.280 ms
     Pool : 0.000 ms
     MemWr: 14.197 ms
     Lrn  : 0.000 ms
   Layer-7:
-    MemRd: 6.515 ms
-    Conv : 6.388 ms
+    MemRd: 6.538 ms
+    Conv : 6.411 ms
     Pool : 0.000 ms
-    MemWr: 6.308 ms
+    MemWr: 6.333 ms
     Lrn  : 0.000 ms
   Layer-8:
-    MemRd: 1.775 ms
-    Conv : 1.647 ms
+    MemRd: 1.789 ms
+    Conv : 1.660 ms
     Pool : 0.000 ms
-    MemWr: 1.557 ms
+    MemWr: 1.571 ms
     Lrn  : 0.000 ms
 
-Total kernel runtime 260.745 ms 
-Batch size = 1, average process time per batch: 260.745 ms 
+Total kernel runtime 260.775 ms 
+Batch size = 1, average process time per batch: 260.775 ms 
 
 Start verifying results ...
 Selected item = 0 from the combined batch results in fc buffers

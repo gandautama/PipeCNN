@@ -1238,7 +1238,6 @@ int prepare()
     else
     	printf("Image file does not exits !!!\n");
 	#endif
-	printf("01 !!!\n");
 
 	// Synset_words
      int nn=0;
@@ -1249,11 +1248,9 @@ int prepare()
     }
     fclose(fp);
 	 
-	printf("02 !!!\n");
 
     // golden_output
 	bin_file_r.open(ref_file_path, ios::in | ios::binary);
-	printf("03 !!!\n");
 
     if(bin_file_r.is_open())
     {
@@ -1270,7 +1267,6 @@ int prepare()
     }
     else
     	printf("Golden file does not exits !!!\n");
-	printf("04 !!!\n");
 
 	// Vectorize the input image by a factor of VEC_SIZE
 	for(unsigned n = 0; n<layer_config[0][data_n]/VEC_SIZE; n++){
@@ -1285,7 +1281,6 @@ int prepare()
 			}
 		}
 	}
-	printf("05 !!!\n");
 
 	// Layer-1
 	reorderWeights(weights, weight_conv[0], layer_config[0][weight_w], layer_config[0][weight_h], layer_config[0][weight_n], layer_config[0][weight_m], layer_config_original[0][weight_n], layer_config_original[0][weight_m], ptr, padding_offset[0], VEC_SIZE, LANE_NUM);
