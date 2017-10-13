@@ -1,11 +1,10 @@
-root@socfpga:~/pipecnn_2_0_opencl_17# ./run.exe.arm conv.aocx
 ***************************************************
-PipeCNN: An OpenCL-Based FPGA Accelerator for CNNs
+PipeCNN: An OpenCL-Based FPGA Accelerator for CNNs 
 ***************************************************
 
-61063552 total weights read
-154587 bytes image read
-1024 total output reference read
+61063552 total weights read 
+154587 bytes image read 
+1024 total output reference read 
 
 
 Platform: Intel(R) FPGA SDK for OpenCL(TM)
@@ -20,7 +19,6 @@ Device Local Memory Size: 16 KBytes
 Device Max Clock Freq: 1000 Mhz
 
 Loading kernel/binary from file conv.aocx
-Reprogramming device [0] with handle 1
 
 Executing Layer 1:
 
@@ -113,60 +111,60 @@ Done !!!
 
 Performance Summary
 
-Total runtime: 0.818918s
+Total runtime: 0.367382s 
 
 Kernel runtime summary:
   Layer-1:
-    MemRd: 69.773 ms
-    Conv : 69.605 ms
-    Pool : 69.517 ms
-    MemWr: 69.429 ms
-    Lrn  : 1.498 ms
+    MemRd: 68.445 ms
+    Conv : 68.295 ms
+    Pool : 68.229 ms
+    MemWr: 68.160 ms
+    Lrn  : 1.709 ms
   Layer-2:
-    MemRd: 96.741 ms
-    Conv : 96.583 ms
-    Pool : 96.485 ms
-    MemWr: 96.382 ms
-    Lrn  : 0.485 ms
+    MemRd: 95.949 ms
+    Conv : 95.812 ms
+    Pool : 95.734 ms
+    MemWr: 95.658 ms
+    Lrn  : 0.554 ms
   Layer-3:
-    MemRd: 66.969 ms
-    Conv : 66.833 ms
+    MemRd: 66.265 ms
+    Conv : 66.142 ms
     Pool : 0.000 ms
-    MemWr: 66.733 ms
+    MemWr: 66.069 ms
     Lrn  : 0.000 ms
   Layer-4:
-    MemRd: 50.251 ms
-    Conv : 50.107 ms
+    MemRd: 49.835 ms
+    Conv : 49.712 ms
     Pool : 0.000 ms
-    MemWr: 50.008 ms
+    MemWr: 49.637 ms
     Lrn  : 0.000 ms
   Layer-5:
-    MemRd: 33.353 ms
-    Conv : 33.185 ms
-    Pool : 33.076 ms
-    MemWr: 32.941 ms
+    MemRd: 33.059 ms
+    Conv : 32.910 ms
+    Pool : 32.819 ms
+    MemWr: 32.711 ms
     Lrn  : 0.000 ms
   Layer-6:
-    MemRd: 14.441 ms
-    Conv : 14.290 ms
+    MemRd: 14.359 ms
+    Conv : 14.237 ms
     Pool : 0.000 ms
-    MemWr: 14.186 ms
+    MemWr: 14.155 ms
     Lrn  : 0.000 ms
   Layer-7:
-    MemRd: 6.523 ms
-    Conv : 6.372 ms
+    MemRd: 6.494 ms
+    Conv : 6.364 ms
     Pool : 0.000 ms
-    MemWr: 6.263 ms
+    MemWr: 6.275 ms
     Lrn  : 0.000 ms
   Layer-8:
-    MemRd: 1.792 ms
-    Conv : 1.638 ms
+    MemRd: 1.775 ms
+    Conv : 1.639 ms
     Pool : 0.000 ms
-    MemWr: 1.527 ms
+    MemWr: 1.551 ms
     Lrn  : 0.000 ms
 
-Total kernel runtime 338.612 ms
-Batch size = 1, average process time per batch: 338.612 ms
+Total kernel runtime 335.111 ms 
+Batch size = 1, average process time per batch: 335.111 ms 
 
 Start verifying results ...
 Selected item = 0 from the combined batch results in fc buffers

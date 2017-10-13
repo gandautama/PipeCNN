@@ -2,7 +2,7 @@
 HOST_EXE  = run.exe.arm
 HOST_SRCS = ./host/main.cpp ./common/ocl_util.cpp ./common/timer.cpp
 HOST_OBJS = $(HOST_SRCS:%.cpp=%.o)
-HOST_INCS = ./common
+HOST_INCS = ./common 
 HOST_DEBUG =
 
 #set source and target for device
@@ -67,7 +67,8 @@ OCC = aoc
 ifeq ($(FLOW),sw_emu)
 OCCFLAGS = -v --report -march=emulator -I device/RTL -L device/RTL -l rtl_lib.aoclib 
 else ifeq ($(FLOW),hw)
-OCCFLAGS = -v --report --profile -I device/RTL -L device/RTL -l rtl_lib.aoclib 
+OCCFLAGS = -v --report --profile -I device/RTL -L device/RTL -l rtl_lib.aoclib
+
 endif
 #amd
 else ifeq ($(VENDOR),amd)
@@ -81,7 +82,7 @@ ifeq ($(KERNEL_DEBUG),1)
 endif
 
 .PHONY: all
-all: host fpga
+all: host #fpga
 
 .PHONY: host
 host: $(HOST_EXE)
