@@ -1,0 +1,2610 @@
+{
+  "nodes":
+  [
+    {
+      "type":"kernel"
+      , "id":2
+      , "name":"memRead"
+      , "file":""
+      , "line":"0"
+      , "children":
+      [
+        {
+          "type":"inst"
+          , "id":15
+          , "name":"Store"
+          , "file":"1"
+          , "line":"200"
+          , "details":
+          {
+            "Width":"64 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"win_buffer"
+            , "Start-Cycle":"137"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":19
+          , "name":"Store"
+          , "file":"1"
+          , "line":"274"
+          , "details":
+          {
+            "Width":"64 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"win_buffer"
+            , "Start-Cycle":"208"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":20
+          , "name":"Store"
+          , "file":"1"
+          , "line":"298"
+          , "details":
+          {
+            "Width":"512 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"weight_buffer"
+            , "Start-Cycle":"208"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":21
+          , "name":"Load"
+          , "file":"1"
+          , "line":"315"
+          , "details":
+          {
+            "Width":"64 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"win_buffer"
+            , "Start-Cycle":"209"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":22
+          , "name":"Load"
+          , "file":"1"
+          , "line":"324"
+          , "details":
+          {
+            "Width":"512 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"weight_buffer"
+            , "Start-Cycle":"209"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"memtype"
+          , "id":29
+          , "name":"Local Memory"
+          , "file":""
+          , "line":"0"
+          , "children":
+          [
+            {
+              "type":"memsys"
+              , "id":30
+              , "name":"win_buffer"
+              , "file":"1"
+              , "line":"173"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":31
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"173"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":32
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":33
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"18432 bytes"
+                , "Implemented size":"32768 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"64 bits"
+                , "Bank depth":"4096 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":35
+              , "name":"weight_buffer"
+              , "file":"1"
+              , "line":"175"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":36
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"175"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":37
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":38
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"73728 bytes"
+                , "Implemented size":"131072 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"512 bits"
+                , "Bank depth":"2048 words"
+                , "Total replication":"1"
+              }
+            }
+          ]
+        }
+        , {
+          "type":"arb"
+          , "id":34
+          , "name":"SHARE"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Mutually exclusive accesses, no stalls"
+          }
+        }
+      ]
+    }
+    , {
+      "type":"kernel"
+      , "id":95
+      , "name":"maxPool"
+      , "file":""
+      , "line":"0"
+      , "children":
+      [
+        {
+          "type":"inst"
+          , "id":100
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":101
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":102
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":103
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":104
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":105
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":106
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":107
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":108
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":109
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":110
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":111
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":112
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":113
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":114
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":115
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":116
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":117
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":118
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":119
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":120
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":121
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":122
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":123
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":124
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":125
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":126
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":127
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":128
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":129
+          , "name":"Load"
+          , "file":"1"
+          , "line":"565"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":130
+          , "name":"Store"
+          , "file":"1"
+          , "line":"581"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_1"
+            , "Start-Cycle":"11"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":131
+          , "name":"Store"
+          , "file":"1"
+          , "line":"582"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"line_buf_0"
+            , "Start-Cycle":"7"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"memtype"
+          , "id":134
+          , "name":"Local Memory"
+          , "file":""
+          , "line":"0"
+          , "children":
+          [
+            {
+              "type":"memsys"
+              , "id":135
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":136
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":137
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":138
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":139
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":140
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":141
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":142
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":143
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":144
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":145
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":146
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":147
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":148
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":149
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":150
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":151
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":152
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":153
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":154
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":155
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":156
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":157
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":158
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":159
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":160
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":161
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":162
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":163
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":164
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":165
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":166
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":167
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":168
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":169
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":170
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":171
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":172
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":173
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":174
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":175
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":176
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":177
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":178
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":179
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":180
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":181
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":182
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":183
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":184
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":185
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":186
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":187
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":188
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":189
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":190
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":191
+              , "name":"line_buf_0"
+              , "file":"1"
+              , "line":"539"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":192
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"539"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":193
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":194
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":195
+              , "name":"line_buf_1"
+              , "file":"1"
+              , "line":"540"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":196
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"540"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":197
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":198
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"1"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"224 bytes"
+                , "Implemented size":"256 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"8 bits"
+                , "Bank depth":"256 words"
+                , "Total replication":"1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "type":"kernel"
+      , "id":201
+      , "name":"memWrite"
+      , "file":""
+      , "line":"0"
+      , "children":
+      [
+        {
+          "type":"inst"
+          , "id":205
+          , "name":"Store"
+          , "file":"1"
+          , "line":"684"
+          , "details":
+          {
+            "Width":"64 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"buffer"
+            , "Start-Cycle":"2"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":206
+          , "name":"Load"
+          , "file":"1"
+          , "line":"705"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"buffer"
+            , "Start-Cycle":"15"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"memtype"
+          , "id":208
+          , "name":"Local Memory"
+          , "file":""
+          , "line":"0"
+          , "children":
+          [
+            {
+              "type":"memsys"
+              , "id":209
+              , "name":"buffer"
+              , "file":"1"
+              , "line":"672"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":210
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"672"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":211
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":212
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"4"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"8 bytes"
+                , "Implemented size":"32 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"64 bits"
+                , "Bank depth":"1 word"
+                , "Total replication":"4\n- replicated 4 times to efficiently support multiple simultaneous workgroups"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "type":"kernel"
+      , "id":215
+      , "name":"lrn"
+      , "file":""
+      , "line":"0"
+      , "children":
+      [
+        {
+          "type":"inst"
+          , "id":220
+          , "name":"Store"
+          , "file":"1"
+          , "line":"767"
+          , "details":
+          {
+            "Width":"16 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Stores to":"z_buffer"
+            , "Start-Cycle":"146"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":221
+          , "name":"Store"
+          , "file":"1"
+          , "line":"767"
+          , "details":
+          {
+            "Width":"16 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Stores to":"z_buffer"
+            , "Start-Cycle":"146"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":222
+          , "name":"Store"
+          , "file":"1"
+          , "line":"767"
+          , "details":
+          {
+            "Width":"16 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Stores to":"z_buffer"
+            , "Start-Cycle":"146"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":223
+          , "name":"Store"
+          , "file":"1"
+          , "line":"767"
+          , "details":
+          {
+            "Width":"16 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Stores to":"z_buffer"
+            , "Start-Cycle":"146"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":224
+          , "name":"Store"
+          , "file":"1"
+          , "line":"774"
+          , "details":
+          {
+            "Width":"16 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Stores to":"z_buffer"
+            , "Start-Cycle":"177"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":225
+          , "name":"Store"
+          , "file":"1"
+          , "line":"782"
+          , "details":
+          {
+            "Width":"16 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Stores to":"z_buffer"
+            , "Start-Cycle":"177"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":226
+          , "name":"Load"
+          , "file":"1"
+          , "line":"802"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Loads from":"z_buffer"
+            , "Start-Cycle":"2"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":227
+          , "name":"Load"
+          , "file":"1"
+          , "line":"802"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Loads from":"z_buffer"
+            , "Start-Cycle":"2"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":228
+          , "name":"Load"
+          , "file":"1"
+          , "line":"802"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Loads from":"z_buffer"
+            , "Start-Cycle":"2"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":229
+          , "name":"Load"
+          , "file":"1"
+          , "line":"802"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"No"
+            , "Loads from":"z_buffer"
+            , "Start-Cycle":"2"
+            , "Latency":"31"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":230
+          , "name":"Load"
+          , "file":"1"
+          , "line":"802"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"z_buffer"
+            , "Start-Cycle":"34"
+            , "Latency":"4"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":231
+          , "name":"Store"
+          , "file":"1"
+          , "line":"826"
+          , "details":
+          {
+            "Width":"8 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Stores to":"lrn_buffer"
+            , "Start-Cycle":"182"
+            , "Latency":"1"
+          }
+        }
+        , {
+          "type":"inst"
+          , "id":232
+          , "name":"Load"
+          , "file":"1"
+          , "line":"838"
+          , "details":
+          {
+            "Width":"64 bits"
+            , "Type":"Pipelined"
+            , "Stall-free":"Yes"
+            , "Loads from":"lrn_buffer"
+            , "Start-Cycle":"0"
+            , "Latency":"3"
+          }
+        }
+        , {
+          "type":"memtype"
+          , "id":234
+          , "name":"Local Memory"
+          , "file":""
+          , "line":"0"
+          , "children":
+          [
+            {
+              "type":"memsys"
+              , "id":235
+              , "name":"z_buffer"
+              , "file":"1"
+              , "line":"747"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":236
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"747"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":240
+                      , "name":"RW"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":246
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":254
+                      , "name":"RW"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":262
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"4"
+                    , "Number of read ports per bank":"2"
+                    , "Number of write ports per bank":"0"
+                    , "Number of shared ports per bank":"2"
+                    , "Total replication":"7"
+                    , "Pumping":"double pumped"
+                  }
+                }
+                , {
+                  "type":"bank"
+                  , "id":237
+                  , "name":"Bank 1"
+                  , "file":"1"
+                  , "line":"747"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":242
+                      , "name":"RW"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":248
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":256
+                      , "name":"RW"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":263
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"4"
+                    , "Number of read ports per bank":"2"
+                    , "Number of write ports per bank":"0"
+                    , "Number of shared ports per bank":"2"
+                    , "Total replication":"7"
+                    , "Pumping":"double pumped"
+                  }
+                }
+                , {
+                  "type":"bank"
+                  , "id":238
+                  , "name":"Bank 2"
+                  , "file":"1"
+                  , "line":"747"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":244
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":250
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":258
+                      , "name":"RW"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":264
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"4"
+                    , "Number of read ports per bank":"3"
+                    , "Number of write ports per bank":"0"
+                    , "Number of shared ports per bank":"1"
+                    , "Total replication":"7"
+                    , "Pumping":"double pumped"
+                  }
+                }
+                , {
+                  "type":"bank"
+                  , "id":239
+                  , "name":"Bank 3"
+                  , "file":"1"
+                  , "line":"747"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":245
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":252
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":260
+                      , "name":"RW"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":265
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"4"
+                    , "Number of read ports per bank":"3"
+                    , "Number of write ports per bank":"0"
+                    , "Number of shared ports per bank":"1"
+                    , "Total replication":"7"
+                    , "Pumping":"double pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"261 bytes"
+                , "Implemented size":"3584 bytes"
+                , "Number of banks":"4"
+                , "Bank width":"16 bits"
+                , "Bank depth":"64 words"
+                , "Total replication":"7\n- replicated 7 times to efficiently support multiple simultaneous workgroups"
+                , "Additional Information":"Running memory at 2x clock to support more concurrent ports"
+              }
+            }
+            , {
+              "type":"memsys"
+              , "id":266
+              , "name":"lrn_buffer"
+              , "file":"1"
+              , "line":"748"
+              , "children":
+              [
+                {
+                  "type":"bank"
+                  , "id":267
+                  , "name":"Bank 0"
+                  , "file":"1"
+                  , "line":"748"
+                  , "children":
+                  [
+                    {
+                      "type":"port"
+                      , "id":268
+                      , "name":"R"
+                      , "file":""
+                      , "line":"0"
+                    }
+                    , {
+                      "type":"port"
+                      , "id":269
+                      , "name":"W"
+                      , "file":""
+                      , "line":"0"
+                    }
+                  ]
+                  , "details":
+                  {
+                    "Total number of ports per bank":"2"
+                    , "Number of read ports per bank":"1"
+                    , "Number of write ports per bank":"1"
+                    , "Total replication":"7"
+                    , "Pumping":"single pumped"
+                  }
+                }
+              ]
+              , "details":
+              {
+                "Requested size":"256 bytes"
+                , "Implemented size":"1792 bytes"
+                , "Number of banks":"1"
+                , "Bank width":"64 bits"
+                , "Bank depth":"32 words"
+                , "Total replication":"7\n- replicated 7 times to efficiently support multiple simultaneous workgroups"
+              }
+            }
+          ]
+        }
+        , {
+          "type":"arb"
+          , "id":241
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":243
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":247
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":249
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":251
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":253
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":255
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":257
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":259
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+        , {
+          "type":"arb"
+          , "id":261
+          , "name":"ARB"
+          , "file":""
+          , "line":"0"
+          , "details":
+          {
+            "Additional Information":"Competing accesses leading to stalls"
+          }
+        }
+      ]
+    }
+  ]
+  ,
+  "links":
+  [
+    {
+      "from":32
+      , "to":21
+    }
+    , {
+      "from":15
+      , "to":34
+    }
+    , {
+      "from":19
+      , "to":34
+    }
+    , {
+      "from":34
+      , "to":33
+    }
+    , {
+      "from":37
+      , "to":22
+    }
+    , {
+      "from":20
+      , "to":38
+    }
+    , {
+      "from":137
+      , "to":100
+    }
+    , {
+      "from":102
+      , "to":138
+    }
+    , {
+      "from":141
+      , "to":101
+    }
+    , {
+      "from":103
+      , "to":142
+    }
+    , {
+      "from":145
+      , "to":105
+    }
+    , {
+      "from":107
+      , "to":146
+    }
+    , {
+      "from":149
+      , "to":104
+    }
+    , {
+      "from":106
+      , "to":150
+    }
+    , {
+      "from":153
+      , "to":109
+    }
+    , {
+      "from":111
+      , "to":154
+    }
+    , {
+      "from":157
+      , "to":108
+    }
+    , {
+      "from":110
+      , "to":158
+    }
+    , {
+      "from":161
+      , "to":113
+    }
+    , {
+      "from":115
+      , "to":162
+    }
+    , {
+      "from":165
+      , "to":112
+    }
+    , {
+      "from":114
+      , "to":166
+    }
+    , {
+      "from":169
+      , "to":117
+    }
+    , {
+      "from":119
+      , "to":170
+    }
+    , {
+      "from":173
+      , "to":116
+    }
+    , {
+      "from":118
+      , "to":174
+    }
+    , {
+      "from":177
+      , "to":121
+    }
+    , {
+      "from":123
+      , "to":178
+    }
+    , {
+      "from":181
+      , "to":120
+    }
+    , {
+      "from":122
+      , "to":182
+    }
+    , {
+      "from":185
+      , "to":125
+    }
+    , {
+      "from":127
+      , "to":186
+    }
+    , {
+      "from":189
+      , "to":124
+    }
+    , {
+      "from":126
+      , "to":190
+    }
+    , {
+      "from":193
+      , "to":129
+    }
+    , {
+      "from":131
+      , "to":194
+    }
+    , {
+      "from":197
+      , "to":128
+    }
+    , {
+      "from":130
+      , "to":198
+    }
+    , {
+      "from":211
+      , "to":206
+    }
+    , {
+      "from":205
+      , "to":212
+    }
+    , {
+      "from":223
+      , "to":241
+    }
+    , {
+      "from":241
+      , "to":226
+    }
+    , {
+      "from":241
+      , "to":240
+    }
+    , {
+      "from":240
+      , "to":241
+    }
+    , {
+      "from":220
+      , "to":243
+    }
+    , {
+      "from":243
+      , "to":226
+    }
+    , {
+      "from":243
+      , "to":242
+    }
+    , {
+      "from":242
+      , "to":243
+    }
+    , {
+      "from":244
+      , "to":226
+    }
+    , {
+      "from":245
+      , "to":226
+    }
+    , {
+      "from":247
+      , "to":227
+    }
+    , {
+      "from":247
+      , "to":229
+    }
+    , {
+      "from":246
+      , "to":247
+    }
+    , {
+      "from":249
+      , "to":227
+    }
+    , {
+      "from":249
+      , "to":229
+    }
+    , {
+      "from":248
+      , "to":249
+    }
+    , {
+      "from":251
+      , "to":227
+    }
+    , {
+      "from":251
+      , "to":229
+    }
+    , {
+      "from":250
+      , "to":251
+    }
+    , {
+      "from":253
+      , "to":227
+    }
+    , {
+      "from":253
+      , "to":229
+    }
+    , {
+      "from":252
+      , "to":253
+    }
+    , {
+      "from":224
+      , "to":255
+    }
+    , {
+      "from":255
+      , "to":228
+    }
+    , {
+      "from":255
+      , "to":254
+    }
+    , {
+      "from":254
+      , "to":255
+    }
+    , {
+      "from":257
+      , "to":228
+    }
+    , {
+      "from":225
+      , "to":257
+    }
+    , {
+      "from":257
+      , "to":256
+    }
+    , {
+      "from":256
+      , "to":257
+    }
+    , {
+      "from":221
+      , "to":259
+    }
+    , {
+      "from":259
+      , "to":228
+    }
+    , {
+      "from":259
+      , "to":258
+    }
+    , {
+      "from":258
+      , "to":259
+    }
+    , {
+      "from":222
+      , "to":261
+    }
+    , {
+      "from":261
+      , "to":228
+    }
+    , {
+      "from":261
+      , "to":260
+    }
+    , {
+      "from":260
+      , "to":261
+    }
+    , {
+      "from":262
+      , "to":230
+    }
+    , {
+      "from":263
+      , "to":230
+    }
+    , {
+      "from":264
+      , "to":230
+    }
+    , {
+      "from":265
+      , "to":230
+    }
+    , {
+      "from":268
+      , "to":232
+    }
+    , {
+      "from":231
+      , "to":269
+    }
+  ]
+  , "fileIndexMap":
+  {
+    "/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl":1
+  }
+}

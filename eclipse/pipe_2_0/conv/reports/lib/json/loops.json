@@ -1,0 +1,606 @@
+{
+  "columns":["Pipelined", "II", "Bottleneck"]
+  , "functions":
+  [
+    {
+      "name":"Kernel: memRead"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":145
+            , "level":0
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Single work-item execution"
+      ]
+    }
+    , {
+      "name":"Block1"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":178
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":178
+            , "level":1
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Block2"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":179
+            , "level":2
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":179
+            , "level":2
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Block3"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":180
+            , "level":3
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":180
+            , "level":3
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":202
+            , "level":3
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":194
+            , "level":4
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Block7"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":222
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":222
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":384
+            , "level":1
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Block9"
+      , "data":
+      ["Yes", "2", "II"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":254
+            , "level":2
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":254
+            , "level":2
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":269
+            , "level":3
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":317
+            , "level":3
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Kernel: coreConv"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":407
+            , "level":0
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Single work-item execution"
+      ]
+    }
+    , {
+      "name":"Block12"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":422
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":422
+            , "level":1
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Block13"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":439
+            , "level":2
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":439
+            , "level":2
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":448
+            , "level":2
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":454
+            , "level":2
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":94
+            , "level":2
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":427
+            , "level":2
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":434
+            , "level":3
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":470
+            , "level":2
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":474
+            , "level":3
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Kernel: maxPool"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":535
+            , "level":0
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Single work-item execution"
+      ]
+    }
+    , {
+      "name":"Block17"
+      , "data":
+      ["Yes", "1", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":554
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":554
+            , "level":1
+          }
+        ]
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":561
+            , "level":2
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":586
+            , "level":3
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Kernel: memWrite"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":660
+            , "level":0
+          }
+        ]
+      ]
+      , "details":
+      [
+        "ND-Range"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":683
+            , "level":1
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Kernel: lrn"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":733
+            , "level":0
+          }
+        ]
+      ]
+      , "details":
+      [
+        "ND-Range"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":766
+            , "level":1
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":773
+            , "level":1
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":781
+            , "level":1
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Block21"
+      , "data":
+      ["No", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":793
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":793
+            , "level":1
+          }
+          , {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":833
+            , "level":1
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Thread capacity = 224"
+      ]
+      , "resources":
+      [
+        {
+          "name":"Thread capacity = 224"
+        }
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":798
+            , "level":2
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+    , {
+      "name":"Fully unrolled loop"
+      , "data":
+      ["n/a", "n/a", "n/a"]
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+            , "line":837
+            , "level":1
+          }
+        ]
+      ]
+      , "details":
+      [
+        "Unrolled by #pragma unroll"
+      ]
+    }
+  ]
+}

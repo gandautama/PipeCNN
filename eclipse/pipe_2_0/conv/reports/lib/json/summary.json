@@ -1,0 +1,240 @@
+{
+  "performanceSummary":
+  {
+    "name":"Kernel Summary"
+    , "columns":
+    ["Kernel Name", "Kernel Type", "Autorun", "Workgroup Size", "# Compute Units"]
+    , "rows":
+    [
+      {
+        "name":"coreConv"
+        , "data":
+        [
+          "Single work-item"
+          , "No"
+          , [1, 1, 1]
+          , 1
+        ]
+        , "details":
+        ["Kernel type: Single work-item", "Max global work dimension: 0", "Required workgroup size: (1, 1, 1)", "Maximum workgroup size: 1"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":407
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"lrn"
+        , "data":
+        [
+          "NDRange"
+          , "No"
+          , "n/a"
+          , 1
+        ]
+        , "details":
+        ["Kernel type: NDRange", "Maximum workgroup size: 32"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":733
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"maxPool"
+        , "data":
+        [
+          "Single work-item"
+          , "No"
+          , [1, 1, 1]
+          , 1
+        ]
+        , "details":
+        ["Kernel type: Single work-item", "Required workgroup size: (1, 1, 1)", "Maximum workgroup size: 1"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":535
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"memRead"
+        , "data":
+        [
+          "Single work-item"
+          , "No"
+          , [1, 1, 1]
+          , 1
+        ]
+        , "details":
+        ["Kernel type: Single work-item", "Max global work dimension: 0", "Required workgroup size: (1, 1, 1)", "Maximum workgroup size: 1"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":145
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"memWrite"
+        , "data":
+        [
+          "NDRange"
+          , "No"
+          , [1, 1, 8]
+          , 1
+        ]
+        , "details":
+        ["Kernel type: NDRange", "Required workgroup size: (1, 1, 8)", "Maximum workgroup size: 8"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":660
+            }
+          ]
+        ]
+      }
+    ]
+  }
+  , "estimatedResources":
+  {
+    "name":"Estimated Resource Usage"
+    , "columns":
+    ["Kernel Name", "ALUTs ", "FFs  ", "RAMs ", "DSPs "]
+    , "rows":
+    [
+      {
+        "name":"coreConv"
+        , "data":
+        [10919, 15936, 0, 0]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":407
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"lrn"
+        , "data":
+        [16408, 22933, 64, 9]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":733
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"maxPool"
+        , "data":
+        [4862, 5343, 16, 0]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":535
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"memRead"
+        , "data":
+        [11443, 22422, 220, 23]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":145
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"memWrite"
+        , "data":
+        [3216, 4962, 18, 2]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/ganda/git/PipeCNN/eclipse/pipe_2_0/device/conv_pipe.cl"
+              , "line":660
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"Kernel Subtotal"
+        , "classes":["summary-highlight", "nohover"]
+        , "data":
+        [46848, 71596, 318, 35]
+      }
+      , {
+        "name":"Channel Resources"
+        , "classes":["summary-highlight", "nohover"]
+        , "data":
+        [1320, 1857, 2, 0]
+      }
+      , {
+        "name":"Global Interconnect"
+        , "classes":["summary-highlight", "nohover"]
+        , "data":
+        [9588, 10682, 0, 0]
+      }
+      , {
+        "name":"Board Interface"
+        , "classes":["summary-highlight", "nohover"]
+        , "data":
+        [2160, 1908, 20, 0]
+      }
+      , {
+        "name":"Total"
+        , "classes":["summary-highlight", "nohover"]
+        , "data":
+        [59916, 86043, 340, 35]
+        , "data_percent":
+        [54.6819, 39.2632, 66.1479, 31.25]
+      }
+      , {
+        "name":"Available"
+        , "classes":["summary-highlight", "nohover"]
+        , "data":
+        [109572, 219144, 514, 112]
+      }
+    ]
+  }
+  , "compileWarnings":
+  {
+    "name":"Compile Warnings"
+    , "rows":
+    [
+    ]
+  }
+}
